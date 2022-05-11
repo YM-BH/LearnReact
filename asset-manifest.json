@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/YM-BH/LearnReact.git/static/css/main.9345b6e2.css",
+    "main.js": "/YM-BH/LearnReact.git/static/js/main.b6fd323c.js",
+    "index.html": "/YM-BH/LearnReact.git/index.html",
+    "main.9345b6e2.css.map": "/YM-BH/LearnReact.git/static/css/main.9345b6e2.css.map",
+    "main.b6fd323c.js.map": "/YM-BH/LearnReact.git/static/js/main.b6fd323c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9345b6e2.css",
+    "static/js/main.b6fd323c.js"
+  ]
+}
