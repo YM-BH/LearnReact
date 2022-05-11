@@ -37,7 +37,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://YM-BH.github.io/react-tutorial",
+  "homepage": "https://YM-BH.github.io/LearnReact/react-tutorial",
   "devDependencies": {
     "gh-pages": "^4.0.0"
   }
