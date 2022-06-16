@@ -12,3 +12,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* 购物车的样式 */
+
+table {
+  border: 1px solid #eee;
+  border-collapse: collapse;
+}
+
+tr, td, th {
+  border: 1px solid #eee;
+  padding: 10px 16px;
+  text-align: center;
+}
+
+th {
+  background-color: #ddd;
+}
+
+.count {
+  margin: 0 5px;
+}
