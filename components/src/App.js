@@ -1,5 +1,50 @@
 
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+// 子组件
+class ChildCpn extends Component {
+
+  render() {
+    const { name, age, height } = this.props
+    return <h2>父组件传递值到子组件:{"name is " + name + ", age is " + age + ", height is " + height}</h2>
+  }
+}
+
+// 规定属性的类型
+ChildCpn.propTypes = {
+  // isRequired 必传
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number,
+  height: PropTypes.number
+}
+
+// 给属性设置默认值
+ChildCpn.defaultProps = {
+  name: "White",
+  age: 33,
+  height: 1.59
+}
+
+
+// 函数组件
+function ChildCpn1(props) {
+
+  const { hobbies } = props
+  return (
+    <ul>
+      {
+        hobbies.map((hobby, index) => {
+          return <li key={index}>{hobby}</li>
+        })
+      }
+    </ul>
+  )
+}
+
+ChildCpn1.propTypes = {
+  hobbies: PropTypes.array
+}
 
 class Cpn extends Component {
 
@@ -52,17 +97,10 @@ export default class App extends Component {
         <button onClick={e => this.increment()}>+1</button>
         <button onClick={e => this.changeCpn()}>切换</button>
         {this.state.isShow && <Cpn />}
+        <ChildCpn name="LBJ" age={38} height={2.03} />
+        <ChildCpn />
+        <ChildCpn1 hobbies={["NBA", "NFL", "CBA", "MLB"]} />
       </div>
     )
   }
 }
-
-// 函数式组件
-// export default function App() {
-//   return (
-//     <div>
-//       <h2>不好意思，小鸡</h2>
-//       <span>函数式组件</span>
-//     </div>
-//   )
-// }
