@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Slot from './Slot'
 
 // 子组件
 class ChildCpn extends Component {
@@ -25,7 +26,6 @@ ChildCpn.defaultProps = {
   age: 33,
   height: 1.59
 }
-
 
 // 函数组件
 function ChildCpn1(props) {
@@ -53,7 +53,16 @@ class Cpn extends Component {
   }
 
   render() {
-    return <h2>我是Cpn组件</h2>
+
+    const { increment } = this.props
+
+    return (
+      <div>
+        <h2>我是Cpn组件,组件间通信-子传父</h2>
+        {/* 通过父组件的属性，调用父组件的方法 */}
+        <button onClick={increment}>子组件按钮</button>
+      </div>
+    )
   }
 }
 
@@ -93,10 +102,15 @@ export default class App extends Component {
     console.log("调用了render方法")
     return (
       <div>
+        <Slot 
+          leftSlot={<span>aaa</span>} 
+          centerSlot={<strong>bbb</strong>} 
+          rightSlot={<span>ccc</span>} 
+        />
         <h2>当前计数：{this.state.counter}</h2>
         <button onClick={e => this.increment()}>+1</button>
         <button onClick={e => this.changeCpn()}>切换</button>
-        {this.state.isShow && <Cpn />}
+        {this.state.isShow && <Cpn increment={e => this.increment()} />}
         <ChildCpn name="LBJ" age={38} height={2.03} />
         <ChildCpn />
         <ChildCpn1 hobbies={["NBA", "NFL", "CBA", "MLB"]} />

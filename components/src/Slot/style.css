@@ -1,0 +1,19 @@
+.slot {
+  display: flex;
+}
+
+.slot .common {
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+}
+
+.left-slot, .right-slot {
+  background: red;
+  width: 70px;
+}
+
+.center-slot {
+  flex: 1;
+  background-color: blue;
+}
